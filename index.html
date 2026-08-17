@@ -37,41 +37,190 @@
       );
 
       const DICTIONARY = {
-        "hemşire": "nurse", "kan": "blood", "aldı": "took", "sonra": "then", "hasta": "patient", "ayrıldı": "left",
-        "sakin": "calm", "bir": "a", "şekilde": "way", "doktor": "doctor", "tarafından": "by", "görevlendirilen": "assigned",
-        "yarışçı": "racer", "arabayı": "car", "çarptı": "crashed", "tabelayı": "sign", "göremediği": "couldn't see", "göremediğinden": "couldn't see", "dolayı": "because of", "için": "because",
-        "kayarak": "by slipping", "şampiyon": "champion", "olmaya": "trying to be", "çalışan": "working/trying",
-        "sonuçları": "results", "inceledi": "examined", "beklerken": "while waiting", "hastalığı": "illness", "bulmak": "to find",
-        "laboratuvar": "laboratory", "gönderilen": "sent", "sekreter": "secretary", "e-postayı": "email", "gönderdi": "sent",
-        "ama": "but", "müşteri": "customer", "açamadı": "couldn't open", "fiyatları": "prices", "görebilmesi": "could see",
-        "müdür": "manager", "uyarılan": "warned", "oyuncu": "player", "golü": "goal", "atmıştı": "had scored", "hakem": "referee",
-        "iptal": "canceled", "etti": "did", "herkes": "everybody", "televizyonda": "on television", "gördü": "saw",
-        "transfer": "transferred", "edilen": "was", "muhasebeci": "accountant", "parayı": "money", "sayıyordu": "was counting",
-        "kasaya": "safe", "koymak": "to put", "birikimlerini": "savings", "aynı": "same", "bankaya": "bank", "getiren": "bringing",
-        "dedektif": "detective", "kanıtı": "evidence", "buldu": "found", "şüpheliler": "suspects", "kaçmadan": "escaped",
-        "önce": "before", "el": "hand", "feneri": "flashlight", "kullanarak": "using", "aile": "family", "tutulan": "hired",
-        "kasada": "in safe", "saklanan": "hidden", "tamirci": "mechanic", "motoru": "engine", "tamir": "repaired", "eve": "home",
-        "dönebilsin": "could drive/return", "diye": "so that", "yağ": "oil", "sızıntısını": "leak", "gidermek": "to fix",
-        "köşedeki": "at the corner", "garajda": "garage", "aşırı": "over", "ısınmadan": "heating", "hasar": "damage",
-        "gören": "damaged", "sürücü": "driver", "park": "park", "feribot": "ferry", "yaklaştığı": "approaching", "yaklaştığından": "approaching", "alt": "lower",
-        "güverteye": "deck", "dikkatlice": "carefully", "adaya": "island", "seyahat": "travel", "eden": "traveling",
-        "yüzlerce": "hundreds", "yolcu": "passenger", "taşıyan": "carrying", "teknik": "technical", "direktör": "manager",
-        "taktikleri": "tactics", "değiştirdi": "changed", "rakip": "opposing", "takım": "team", "atınca": "when scored",
-        "maçı": "match", "kazanmak": "to win", "medya": "media", "eleştirilen": "criticized", "yazılımcı": "programmer",
-        "yazılımı": "software", "güncelledi": "updated", "uygulama": "application", "çöktü": "crashed", "özensiz": "sloppy",
-        "projeye": "project", "atanan": "assigned", "öğrenciler": "students", "kullanılan": "used", "öğretmen": "teacher",
-        "sınavları": "exams", "hazırladı": "prepared", "okurken": "while reading", "kelime": "vocabulary",
-        "dağarcıklarını": "vocabulary", "test": "test", "etmek": "to do", "arka": "back", "sırada": "row", "oturan": "sitting",
-        "dil": "language", "okulunda": "school", "şef": "chef", "eti": "meat", "pişirdi": "cooked", "garson": "waiter",
-        "siparişi": "order", "aldıktan": "after taking", "sıcak": "hot", "ızgarada": "grill", "tepsi": "tray",
-        "fransa'da": "in France", "eğitim": "training", "alan": "trained", "pilot": "pilot", "uçağı": "plane",
-        "indirdi": "landed", "hava": "weather", "kötü": "bad", "olduğu": "because", "olduğundan": "because", "piste": "runway", "güvenli": "safely",
-        "ticari": "commercial", "jeti": "jet", "uçuran": "flying", "mimar": "architect", "planları": "plans", "çizdi": "drew",
-        "işçiler": "workers", "başlayabilsin": "could start", "büyük": "great", "hassasiyetle": "precision",
-        "şirket": "company", "işe": "work", "alınan": "hired", "şantiyede": "site", "bekleyen": "waiting",
-        "güvenlik": "security", "görevlisi": "guard", "kasayı": "vault", "kilitledi": "locked", "hırsızlar": "thieves",
-        "girmeden": "entered", "panik": "panic", "içinde": "in", "gece": "night", "vardiyasında": "shift", "nakit": "cash",
-        "para": "money", "bulunan": "containing", "la": "La", "liga'dan": "from Liga", "oyuncunun": "player's", "hakemin": "referee's"
+        // Nouns, pronouns, particles, etc.
+        "hemşire": "nurse",
+        "kan": "blood",
+        "sonra": "then / after",
+        "hasta": "patient",
+        "sakin": "calm",
+        "bir": "a / one",
+        "şekilde": "way / manner",
+        "doktor": "doctor",
+        "tarafından": "by",
+        "yarışçı": "racer",
+        "arabayı": "car",
+        "tabelayı": "sign",
+        "dolayı": "because of",
+        "için": "for / because",
+        "şampiyon": "champion",
+        "sonuçları": "results",
+        "laboratuvar": "laboratory",
+        "sekreter": "secretary",
+        "e-postayı": "email",
+        "ama": "but",
+        "müşteri": "customer",
+        "fiyatları": "prices",
+        "müdür": "manager",
+        "oyuncu": "player",
+        "golü": "goal",
+        "hakem": "referee",
+        "herkes": "everybody",
+        "televizyonda": "on television",
+        "transfer": "transfer",
+        "muhasebeci": "accountant",
+        "parayı": "money",
+        "kasaya": "into the safe",
+        "birikimlerini": "savings",
+        "aynı": "same",
+        "bankaya": "to the bank",
+        "dedektif": "detective",
+        "kanıtı": "evidence",
+        "şüpheliler": "suspects",
+        "önce": "before",
+        "el": "hand",
+        "feneri": "flashlight",
+        "aile": "family",
+        "kasada": "in the safe",
+        "tamirci": "mechanic",
+        "motoru": "engine",
+        "eve": "home",
+        "diye": "so that",
+        "yağ": "oil",
+        "sızıntısını": "leak",
+        "köşedeki": "at the corner",
+        "garajda": "in the garage",
+        "aşırı": "excessive",
+        "hasar": "damage",
+        "sürücü": "driver",
+        "feribot": "ferry",
+        "alt": "lower",
+        "güverteye": "to the deck",
+        "dikkatlice": "carefully",
+        "adaya": "to the island",
+        "yüzlerce": "hundreds",
+        "yolcu": "passenger",
+        "teknik": "technical",
+        "direktör": "manager",
+        "taktikleri": "tactics",
+        "rakip": "opposing",
+        "takım": "team",
+        "maçı": "match",
+        "medya": "media",
+        "yazılımcı": "programmer",
+        "yazılımı": "software",
+        "uygulama": "application",
+        "özensiz": "sloppy / careless",
+        "projeye": "to the project",
+        "öğrenciler": "students",
+        "öğretmen": "teacher",
+        "sınavları": "exams",
+        "kelime": "vocabulary",
+        "dağarcıklarını": "their vocabulary",
+        "arka": "back",
+        "sırada": "in row",
+        "dil": "language",
+        "okulunda": "in school",
+        "şef": "chef",
+        "eti": "meat",
+        "garson": "waiter",
+        "siparişi": "order",
+        "sıcak": "hot",
+        "ızgarada": "on the grill",
+        "tepsi": "tray",
+        "fransa'da": "in France",
+        "eğitim": "training / education",
+        "pilot": "pilot",
+        "uçağı": "plane",
+        "hava": "weather",
+        "kötü": "bad",
+        "piste": "onto the runway",
+        "güvenli": "safely",
+        "ticari": "commercial",
+        "jeti": "jet",
+        "mimar": "architect",
+        "planları": "plans",
+        "işçiler": "workers",
+        "büyük": "great",
+        "hassasiyetle": "with precision",
+        "şirket": "company",
+        "işe": "to work",
+        "şantiyede": "at the site",
+        "güvenlik": "security",
+        "görevlisi": "officer / guard",
+        "kasayı": "vault / safe",
+        "hırsızlar": "thieves",
+        "panik": "panic",
+        "içinde": "in",
+        "gece": "night",
+        "vardiyasında": "on shift",
+        "nakit": "cash",
+        "para": "money",
+        "la": "La",
+        "liga'dan": "from Liga",
+        "oyuncunun": "player's",
+        "hakemin": "referee's",
+
+        // Verbs (Base forms / Infinitives / Participles / Compound Verbs)
+        "aldı": "to take / took",
+        "ayrıldı": "to leave / left",
+        "görevlendirilen": "assigned / appointed",
+        "çarptı": "to crash / crashed",
+        "göremediğinden": "due to not being able to see",
+        "kayarak": "by slipping",
+        "olmaya": "becoming / trying to be",
+        "çalışan": "working / trying",
+        "inceledi": "to examine / examined",
+        "beklerken": "while waiting",
+        "bulmak": "to find",
+        "gönderilen": "sent",
+        "gönderdi": "to send / sent",
+        "açamadı": "unable to open / couldn't open",
+        "görebilmesi": "being able to see",
+        "uyarılan": "warned",
+        "atmıştı": "had scored",
+        "iptal etti": "to cancel / canceled",
+        "gördü": "to see / saw",
+        "edilen": "done / transferred",
+        "sayıyordu": "was counting",
+        "koymak": "to put",
+        "getiren": "bringing",
+        "buldu": "to find / found",
+        "kaçmadan": "before escaping",
+        "kullanarak": "using",
+        "tutulan": "hired / employed",
+        "saklanan": "hidden",
+        "tamir etti": "to repair / repaired",
+        "dönebilsin": "might be able to return",
+        "gidermek": "to fix / eliminate",
+        "ısınmadan": "from heating / overheating",
+        "gören": "experiencing / damaged",
+        "park etti": "to park / parked",
+        "yaklaştığından": "due to approaching",
+        "seyahat": "traveling",
+        "eden": "traveling / doing",
+        "taşıyan": "carrying",
+        "değiştirdi": "to change / changed",
+        "atınca": "upon scoring / when scored",
+        "kazanmak": "to win",
+        "eleştirilen": "criticized",
+        "güncelledi": "to update / updated",
+        "çöktü": "to crash / collapsed",
+        "atanan": "assigned",
+        "kullanılan": "used",
+        "hazırladı": "to prepare / prepared",
+        "okurken": "while reading",
+        "test etmek": "to test",
+        "oturan": "sitting",
+        "pişirdi": "to cook / cooked",
+        "aldıktan": "after taking",
+        "indirdi": "to land / landed",
+        "uçuran": "flying / piloting",
+        "çizdi": "to draw / drew",
+        "başlayabilsin": "might be able to start",
+        "alınan": "hired / taken",
+        "kilitledi": "to lock / locked",
+        "girmeden": "before entering",
+        "bulunan": "containing / located"
       };
 
       const THEMES = [
@@ -228,8 +377,18 @@
         { level: 4, name: "Platinum League", color: "bg-cyan-500" }
       ];
 
+      function prepareSentenceForSplit(sentence) {
+        let s = sentence;
+        s = s.replace(/park\s+etti/gi, (match) => match.replace(/\s+/, '\u00A0'));
+        s = s.replace(/tamir\s+etti/gi, (match) => match.replace(/\s+/, '\u00A0'));
+        s = s.replace(/iptal\s+etti/gi, (match) => match.replace(/\s+/, '\u00A0'));
+        s = s.replace(/test\s+etmek/gi, (match) => match.replace(/\s+/, '\u00A0'));
+        return s;
+      }
+
       function computeHighlights(sentences) {
-        const cleanWord = (w) => w.toLowerCase().replace(/[.,!?;:()]/g, '');
+        const preparedSentences = sentences.map(prepareSentenceForSplit);
+        const cleanWord = (w) => w.toLowerCase().replace(/\u00A0/g, ' ').replace(/[.,!?;:()]/g, '');
         const isMatch = (w1, w2) => {
           const c1 = cleanWord(w1);
           const c2 = cleanWord(w2);
@@ -240,13 +399,13 @@
         };
 
         const results = [];
-        if (sentences.length === 0) return results;
+        if (preparedSentences.length === 0) return results;
 
-        let currentTokens = sentences[0].split(' ').map(w => ({ word: w, level: 1 }));
+        let currentTokens = preparedSentences[0].split(' ').map(w => ({ word: w, level: 1 }));
         results.push([...currentTokens]);
 
-        for (let i = 1; i < sentences.length; i++) {
-          const nextWords = sentences[i].split(' ');
+        for (let i = 1; i < preparedSentences.length; i++) {
+          const nextWords = preparedSentences[i].split(' ');
           const lcsMatrix = Array(currentTokens.length + 1).fill(0).map(() => Array(nextWords.length + 1).fill(0));
           for (let j = 1; j <= currentTokens.length; j++) {
             for (let k = 1; k <= nextWords.length; k++) {
@@ -382,7 +541,7 @@
                 else if (t.level === 3) bgClass = "bg-green-300 text-green-950 font-medium";
                 else if (t.level === 4) bgClass = "bg-sky-200 text-sky-950 font-medium";
 
-                const cleanWordKey = t.word.toLowerCase().replace(/[.,!?;:()]/g, '');
+                const cleanWordKey = t.word.toLowerCase().replace(/\u00A0/g, ' ').replace(/[.,!?;:()]/g, '');
                 const englishTranslation = DICTIONARY[cleanWordKey];
 
                 return (
