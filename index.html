@@ -29,6 +29,12 @@
       const CheckCircleIcon = ({ className = "w-6 h-6" }) => (
         <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
       );
+      const CheckIcon = ({ className = "w-6 h-6" }) => (
+        <svg className={className} fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
+      );
+      const XIcon = ({ className = "w-6 h-6" }) => (
+        <svg className={className} fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      );
       const PlayIcon = ({ className = "w-6 h-6" }) => (
         <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
       );
@@ -37,42 +43,153 @@
       );
 
       const DICTIONARY = {
-        // Nouns, pronouns, particles, etc.
+        // Compound Verbs & Verbal Expressions (Single simple English definition)
+        "park etti": "park",
+        "tamir etti": "repair",
+        "iptal etti": "cancel",
+        "iptal ettiğini": "cancel",
+        "gol attığını": "score",
+        "attığını": "score",
+        "test etmek": "test",
+        "transfer edilen": "transfer",
+        "işe alınan": "hire",
+        "eğitim alan": "train",
+        "hasar gören": "damage",
+        "seyahat eden": "travel",
+        "olmaya çalışan": "try",
+
+        // Compound Nouns & Fixed Phrases
+        "güvenlik görevlisi": "security guard",
+        "teknik direktör": "coach",
+        "el feneri": "flashlight",
+        "nakit para": "cash",
+        "dil okulunda": "at school",
+        "gece vardiyasında": "on night shift",
+        "arka sırada": "in back row",
+        "alt güverteye": "to lower deck",
+        "panik içinde": "in panic",
+        "sakin bir şekilde": "calmly",
+        "özensiz bir şekilde": "sloppily",
+        "güvenli bir şekilde": "safely",
+        "büyük bir hassasiyetle": "with precision",
+        "aldıktan sonra": "after taking",
+        "kaçmadan önce": "before escaping",
+        "girmeden önce": "before entering",
+        "La Liga'dan": "from La Liga",
+        "olduğundan dolayı": "because",
+        "göremediğinden dolayı": "because unable to see",
+        "yaklaştığından dolayı": "because of approaching",
+        "bulmak için": "to find",
+        "kazanmak için": "to win",
+        "gidermek için": "to fix",
+        "dönebilsin diye": "so that could return",
+        "başlayabilsin diye": "so that could start",
+        "görebilmesi için": "so that could see",
+
+        // Base Verbs (Single simple word)
+        "aldı": "take",
+        "ayrıldı": "leave",
+        "çarptı": "crash",
+        "inceledi": "examine",
+        "gönderdi": "send",
+        "gördü": "see",
+        "sayıyordu": "count",
+        "buldu": "find",
+        "değiştirdi": "change",
+        "güncelledi": "update",
+        "çöktü": "crash",
+        "hazırladı": "prepare",
+        "pişirdi": "cook",
+        "indirdi": "land",
+        "çizdi": "draw",
+        "kilitledi": "lock",
+        "bulmak": "find",
+        "koymak": "put",
+        "gidermek": "fix",
+        "kazanmak": "win",
+        "etmek": "do",
+        "etti": "do",
+
+        // Participles & Verbal Modifiers (Single simple base word)
+        "görevlendirilen": "assign",
+        "uyarılan": "warn",
+        "eleştirilen": "criticize",
+        "kullanılan": "use",
+        "tutulan": "hire",
+        "saklanan": "hide",
+        "taşıyan": "carry",
+        "uçuran": "fly",
+        "oturan": "sit",
+        "getiren": "bring",
+        "bekleyen": "wait",
+        "bulunan": "contain",
+        "çalışan": "work",
+        "kayarak": "slip",
+        "kullanarak": "use",
+        "gönderilen": "send",
+        "edilen": "transfer",
+        "alan": "receive",
+        "gören": "damage",
+        "eden": "travel",
+        "beklerken": "wait",
+        "okurken": "read",
+        "atınca": "score",
+        "aldıktan": "take",
+        "kaçmadan": "escape",
+        "girmeden": "enter",
+        "olmaya": "be",
+        "açamadı": "open",
+        "göremediğinden": "see",
+        "yaklaştığından": "approach",
+        "olduğundan": "be",
+        "görebilmesi": "see",
+        "başlayabilsin": "start",
+        "dönebilsin": "return",
+        "atmıştı": "score",
+
+        // Nouns, Adjectives, Conjunctions & Adverbs
         "hemşire": "nurse",
         "kan": "blood",
-        "sonra": "then / after",
+        "sonra": "then",
         "hasta": "patient",
         "sakin": "calm",
-        "bir": "a / one",
-        "şekilde": "way / manner",
+        "bir": "a",
+        "şekilde": "way",
         "doktor": "doctor",
         "tarafından": "by",
         "yarışçı": "racer",
         "arabayı": "car",
         "tabelayı": "sign",
-        "dolayı": "because of",
-        "için": "for / because",
+        "dolayı": "because",
+        "için": "for",
         "şampiyon": "champion",
         "sonuçları": "results",
+        "hastalığı": "illness",
         "laboratuvar": "laboratory",
         "sekreter": "secretary",
         "e-postayı": "email",
         "ama": "but",
         "müşteri": "customer",
+        "müşterinin": "customer's",
         "fiyatları": "prices",
         "müdür": "manager",
         "oyuncu": "player",
+        "oyuncunun": "player's",
         "golü": "goal",
         "hakem": "referee",
-        "herkes": "everybody",
+        "hakemin": "referee's",
+        "iptal": "cancel",
+        "herkes": "everyone",
         "televizyonda": "on television",
         "transfer": "transfer",
         "muhasebeci": "accountant",
         "parayı": "money",
-        "kasaya": "into the safe",
+        "kasaya": "safe",
+        "kasada": "safe",
+        "kasayı": "safe",
         "birikimlerini": "savings",
         "aynı": "same",
-        "bankaya": "to the bank",
+        "bankaya": "bank",
         "dedektif": "detective",
         "kanıtı": "evidence",
         "şüpheliler": "suspects",
@@ -80,7 +197,6 @@
         "el": "hand",
         "feneri": "flashlight",
         "aile": "family",
-        "kasada": "in the safe",
         "tamirci": "mechanic",
         "motoru": "engine",
         "eve": "home",
@@ -88,139 +204,76 @@
         "yağ": "oil",
         "sızıntısını": "leak",
         "köşedeki": "at the corner",
-        "garajda": "in the garage",
+        "garajda": "in garage",
         "aşırı": "excessive",
+        "ısınmadan": "overheating",
         "hasar": "damage",
         "sürücü": "driver",
         "feribot": "ferry",
         "alt": "lower",
-        "güverteye": "to the deck",
+        "güverteye": "deck",
         "dikkatlice": "carefully",
-        "adaya": "to the island",
+        "adaya": "island",
+        "seyahat": "travel",
         "yüzlerce": "hundreds",
         "yolcu": "passenger",
         "teknik": "technical",
-        "direktör": "manager",
+        "direktör": "director",
         "taktikleri": "tactics",
-        "rakip": "opposing",
+        "rakip": "rival",
         "takım": "team",
         "maçı": "match",
         "medya": "media",
         "yazılımcı": "programmer",
         "yazılımı": "software",
         "uygulama": "application",
-        "özensiz": "sloppy / careless",
-        "projeye": "to the project",
+        "özensiz": "sloppy",
+        "projeye": "project",
         "öğrenciler": "students",
         "öğretmen": "teacher",
         "sınavları": "exams",
         "kelime": "vocabulary",
-        "dağarcıklarını": "their vocabulary",
+        "dağarcıklarını": "vocabulary",
         "arka": "back",
-        "sırada": "in row",
+        "sırada": "row",
         "dil": "language",
-        "okulunda": "in school",
+        "okulunda": "school",
         "şef": "chef",
         "eti": "meat",
         "garson": "waiter",
         "siparişi": "order",
         "sıcak": "hot",
-        "ızgarada": "on the grill",
+        "ızgarada": "grill",
         "tepsi": "tray",
         "fransa'da": "in France",
-        "eğitim": "training / education",
+        "eğitim": "training",
         "pilot": "pilot",
         "uçağı": "plane",
         "hava": "weather",
         "kötü": "bad",
-        "piste": "onto the runway",
-        "güvenli": "safely",
+        "piste": "runway",
+        "güvenli": "safe",
         "ticari": "commercial",
         "jeti": "jet",
         "mimar": "architect",
         "planları": "plans",
         "işçiler": "workers",
         "büyük": "great",
-        "hassasiyetle": "with precision",
+        "hassasiyetle": "precision",
         "şirket": "company",
-        "işe": "to work",
-        "şantiyede": "at the site",
+        "işe": "work",
+        "şantiyede": "site",
         "güvenlik": "security",
-        "görevlisi": "officer / guard",
-        "kasayı": "vault / safe",
+        "görevlisi": "guard",
         "hırsızlar": "thieves",
         "panik": "panic",
         "içinde": "in",
         "gece": "night",
-        "vardiyasında": "on shift",
+        "vardiyasında": "shift",
         "nakit": "cash",
         "para": "money",
         "la": "La",
-        "liga'dan": "from Liga",
-        "oyuncunun": "player's",
-        "hakemin": "referee's",
-
-        // Verbs (Base forms / Infinitives / Participles / Compound Verbs)
-        "aldı": "to take / took",
-        "ayrıldı": "to leave / left",
-        "görevlendirilen": "assigned / appointed",
-        "çarptı": "to crash / crashed",
-        "göremediğinden": "due to not being able to see",
-        "kayarak": "by slipping",
-        "olmaya": "becoming / trying to be",
-        "çalışan": "working / trying",
-        "inceledi": "to examine / examined",
-        "beklerken": "while waiting",
-        "bulmak": "to find",
-        "gönderilen": "sent",
-        "gönderdi": "to send / sent",
-        "açamadı": "unable to open / couldn't open",
-        "görebilmesi": "being able to see",
-        "uyarılan": "warned",
-        "atmıştı": "had scored",
-        "iptal etti": "to cancel / canceled",
-        "gördü": "to see / saw",
-        "edilen": "done / transferred",
-        "sayıyordu": "was counting",
-        "koymak": "to put",
-        "getiren": "bringing",
-        "buldu": "to find / found",
-        "kaçmadan": "before escaping",
-        "kullanarak": "using",
-        "tutulan": "hired / employed",
-        "saklanan": "hidden",
-        "tamir etti": "to repair / repaired",
-        "dönebilsin": "might be able to return",
-        "gidermek": "to fix / eliminate",
-        "ısınmadan": "from heating / overheating",
-        "gören": "experiencing / damaged",
-        "park etti": "to park / parked",
-        "yaklaştığından": "due to approaching",
-        "seyahat": "traveling",
-        "eden": "traveling / doing",
-        "taşıyan": "carrying",
-        "değiştirdi": "to change / changed",
-        "atınca": "upon scoring / when scored",
-        "kazanmak": "to win",
-        "eleştirilen": "criticized",
-        "güncelledi": "to update / updated",
-        "çöktü": "to crash / collapsed",
-        "atanan": "assigned",
-        "kullanılan": "used",
-        "hazırladı": "to prepare / prepared",
-        "okurken": "while reading",
-        "test etmek": "to test",
-        "oturan": "sitting",
-        "pişirdi": "to cook / cooked",
-        "aldıktan": "after taking",
-        "indirdi": "to land / landed",
-        "uçuran": "flying / piloting",
-        "çizdi": "to draw / drew",
-        "başlayabilsin": "might be able to start",
-        "alınan": "hired / taken",
-        "kilitledi": "to lock / locked",
-        "girmeden": "before entering",
-        "bulunan": "containing / located"
+        "liga'dan": "from Liga"
       };
 
       const THEMES = [
@@ -379,10 +432,52 @@
 
       function prepareSentenceForSplit(sentence) {
         let s = sentence;
-        s = s.replace(/park\s+etti/gi, (match) => match.replace(/\s+/, '\u00A0'));
-        s = s.replace(/tamir\s+etti/gi, (match) => match.replace(/\s+/, '\u00A0'));
-        s = s.replace(/iptal\s+etti/gi, (match) => match.replace(/\s+/, '\u00A0'));
-        s = s.replace(/test\s+etmek/gi, (match) => match.replace(/\s+/, '\u00A0'));
+        const compounds = [
+          "güvenlik görevlisi",
+          "teknik direktör",
+          "el feneri",
+          "nakit para",
+          "dil okulunda",
+          "gece vardiyasında",
+          "arka sırada",
+          "alt güverteye",
+          "panik içinde",
+          "sakin bir şekilde",
+          "özensiz bir şekilde",
+          "güvenli bir şekilde",
+          "büyük bir hassasiyetle",
+          "aldıktan sonra",
+          "kaçmadan önce",
+          "girmeden önce",
+          "La Liga'dan",
+          "olduğundan dolayı",
+          "göremediğinden dolayı",
+          "yaklaştığından dolayı",
+          "bulmak için",
+          "kazanmak için",
+          "gidermek için",
+          "dönebilsin diye",
+          "başlayabilsin diye",
+          "görebilmesi için",
+          "iptal ettiğini",
+          "gol attığını",
+          "iptal etti",
+          "tamir etti",
+          "park etti",
+          "test etmek",
+          "transfer edilen",
+          "işe alınan",
+          "eğitim alan",
+          "hasar gören",
+          "seyahat eden",
+          "olmaya çalışan"
+        ];
+
+        compounds.forEach(phrase => {
+          const pattern = phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s+');
+          const regex = new RegExp(pattern, 'gi');
+          s = s.replace(regex, (match) => match.replace(/\s+/g, '\u00A0'));
+        });
         return s;
       }
 
@@ -441,29 +536,41 @@
         return results;
       }
 
+      function shuffleArray(array) {
+        const arr = [...array];
+        for (let i = arr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+      }
+
       function App() {
         const [mode, setMode] = useState('menu');
-        const [themeIndex, setThemeIndex] = useState(0);
+        const [cardQueue, setCardQueue] = useState(() => shuffleArray(Array.from({ length: THEMES.length }, (_, i) => i)));
+        const [currentIndex, setCurrentIndex] = useState(0);
         const [level, setLevel] = useState(1);
         const [isRevealed, setIsRevealed] = useState(false);
         const [score, setScore] = useState(0);
-        const [showPopup, setShowPopup] = useState(false);
         const [finished, setFinished] = useState(false);
         const [activeWordId, setActiveWordId] = useState(null);
 
+        const currentThemeIndex = cardQueue[currentIndex] !== undefined ? cardQueue[currentIndex] : 0;
+
         const startGame = (selectedMode) => {
           setMode(selectedMode);
-          setThemeIndex(0);
+          const randomizedCards = shuffleArray(Array.from({ length: THEMES.length }, (_, i) => i));
+          setCardQueue(randomizedCards);
+          setCurrentIndex(0);
           setLevel(1);
           setScore(0);
           setIsRevealed(false);
           setFinished(false);
-          setShowPopup(false);
           setActiveWordId(null);
         };
 
         const { trHighlights, enHighlights } = useMemo(() => {
-          const currentTheme = THEMES[themeIndex];
+          const currentTheme = THEMES[currentThemeIndex];
           if (!currentTheme) return { trHighlights: [], enHighlights: [] };
           const trSentences = currentTheme.sentences.map(s => s.tr);
           const enSentences = currentTheme.sentences.map(s => s.en);
@@ -471,24 +578,30 @@
             trHighlights: computeHighlights(trSentences),
             enHighlights: computeHighlights(enSentences)
           };
-        }, [themeIndex]);
+        }, [currentThemeIndex]);
 
         const handleReveal = () => {
           if (!isRevealed) {
             setIsRevealed(true);
-            setScore(s => s + 10);
             setActiveWordId(null);
           }
         };
 
-        const handleNext = () => {
+        const handleAnswer = (isCorrect) => {
           setActiveWordId(null);
+          if (isCorrect) {
+            setScore(s => s + 10);
+          }
+
           if (mode === 'elimination') {
             if (level < 4) {
-              setShowPopup(true);
+              // Automatically upgrade to higher league for this sentence
+              setLevel(l => l + 1);
+              setIsRevealed(false);
             } else {
-              if (themeIndex < THEMES.length - 1) {
-                setThemeIndex(t => t + 1);
+              if (currentIndex < cardQueue.length - 1) {
+                // Move to next random card
+                setCurrentIndex(i => i + 1);
                 setLevel(1);
                 setIsRevealed(false);
               } else {
@@ -496,12 +609,18 @@
               }
             }
           } else if (mode === 'leaguewise') {
-            if (themeIndex < THEMES.length - 1) {
-              setThemeIndex(t => t + 1);
+            if (currentIndex < cardQueue.length - 1) {
+              // Next random card in this league
+              setCurrentIndex(i => i + 1);
               setIsRevealed(false);
             } else {
               if (level < 4) {
-                setShowPopup(true);
+                // Advance to higher league and reshuffle for the new league
+                const nextDeck = shuffleArray(Array.from({ length: THEMES.length }, (_, i) => i));
+                setCardQueue(nextDeck);
+                setCurrentIndex(0);
+                setLevel(l => l + 1);
+                setIsRevealed(false);
               } else {
                 setFinished(true);
               }
@@ -509,23 +628,9 @@
           }
         };
 
-        const handleProceedLeague = () => {
-          setActiveWordId(null);
-          if (mode === 'elimination') {
-            setLevel(l => l + 1);
-            setIsRevealed(false);
-            setShowPopup(false);
-          } else if (mode === 'leaguewise') {
-            setLevel(l => l + 1);
-            setThemeIndex(0);
-            setIsRevealed(false);
-            setShowPopup(false);
-          }
-        };
-
         const renderSentence = (tokens, isTurkish) => {
           return (
-            <div className="flex flex-wrap justify-center gap-x-2 gap-y-6 pt-6 pb-2">
+            <div className="flex flex-wrap justify-center items-center gap-x-1.5 sm:gap-x-2 gap-y-2.5 sm:gap-y-4 py-1 sm:py-2">
               {tokens.map((t, idx) => {
                 const wordId = `${level}-${idx}`;
                 const isActive = activeWordId === wordId;
@@ -534,22 +639,22 @@
                 let paddingClass = "";
                 
                 if (t.level > 1) {
-                  paddingClass = "px-2 py-0.5 rounded-md shadow-sm";
+                  paddingClass = "px-1.5 sm:px-2 py-0.5 rounded-md shadow-sm";
                 }
                 
                 if (t.level === 2) bgClass = "bg-yellow-200 text-yellow-950 font-medium";
                 else if (t.level === 3) bgClass = "bg-green-300 text-green-950 font-medium";
                 else if (t.level === 4) bgClass = "bg-sky-200 text-sky-950 font-medium";
 
-                const cleanWordKey = t.word.toLowerCase().replace(/\u00A0/g, ' ').replace(/[.,!?;:()]/g, '');
+                const cleanWordKey = t.word.toLowerCase().replace(/\u00A0/g, ' ').replace(/[.,!?;:()]/g, '').trim();
                 const englishTranslation = DICTIONARY[cleanWordKey];
 
                 return (
-                  <span key={idx} className="relative inline-block my-1">
+                  <span key={idx} className="relative inline-block my-0.5">
                     {isTurkish && isActive && englishTranslation && (
                       <span 
                         onClick={(e) => { e.stopPropagation(); setActiveWordId(null); }}
-                        className="absolute -top-11 left-1/2 -translate-x-1/2 bg-red-600 text-white text-sm font-bold px-3 py-1 rounded-lg shadow-xl whitespace-nowrap z-30 cursor-pointer flex items-center space-x-1"
+                        className="absolute -top-10 left-1/2 -translate-x-1/2 bg-red-600 text-white text-xs sm:text-sm font-bold px-2.5 py-1 rounded-lg shadow-xl whitespace-nowrap z-30 cursor-pointer flex items-center space-x-1"
                       >
                         <span>{englishTranslation}</span>
                         <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-red-600"></span>
@@ -571,35 +676,35 @@
 
         if (mode === 'menu') {
           return (
-            <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-4">
-              <div className="max-w-2xl w-full text-center mb-12">
-                <h1 className="text-5xl font-extrabold text-slate-800 mb-4 tracking-tight">Turkish Language Mastery</h1>
-                <p className="text-lg text-slate-600">Choose your path to mastery. Learn systematically league by league, or master each sentence perfectly before moving on.</p>
+            <div className="min-h-[100dvh] bg-slate-50 flex flex-col items-center justify-center p-4 sm:p-6 overflow-y-auto">
+              <div className="max-w-2xl w-full text-center mb-8 sm:mb-12">
+                <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-800 mb-3 sm:mb-4 tracking-tight">Turkish Language Mastery</h1>
+                <p className="text-sm sm:text-lg text-slate-600">Choose your path to mastery. Learn systematically league by league, or master each sentence perfectly before moving on.</p>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-6 w-full max-w-4xl">
+              <div className="grid md:grid-cols-2 gap-4 sm:gap-6 w-full max-w-4xl">
                 <button 
                   onClick={() => startGame('leaguewise')}
-                  className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-left border-2 border-transparent hover:border-indigo-500 group"
+                  className="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg sm:shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-left border-2 border-transparent hover:border-indigo-500 group"
                 >
-                  <div className="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <LayersIcon className="w-8 h-8 text-indigo-600" />
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-indigo-100 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                    <LayersIcon className="w-6 h-6 sm:w-8 sm:h-8 text-indigo-600" />
                   </div>
-                  <h2 className="text-2xl font-bold text-slate-800 mb-3">League-Wise Path</h2>
-                  <p className="text-slate-600 leading-relaxed">
+                  <h2 className="text-xl sm:text-2xl font-bold text-slate-800 mb-2 sm:mb-3">League-Wise Path</h2>
+                  <p className="text-slate-600 text-xs sm:text-base leading-relaxed">
                     Complete all 16 sentences in Bronze League first, then sequentially advance through Silver, Gold, and Platinum leagues.
                   </p>
                 </button>
 
                 <button 
                   onClick={() => startGame('elimination')}
-                  className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-left border-2 border-transparent hover:border-emerald-500 group"
+                  className="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg sm:shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-left border-2 border-transparent hover:border-emerald-500 group"
                 >
-                  <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <PlayIcon className="w-8 h-8 text-emerald-600" />
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-emerald-100 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                    <PlayIcon className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-600" />
                   </div>
-                  <h2 className="text-2xl font-bold text-slate-800 mb-3">Elimination Path</h2>
-                  <p className="text-slate-600 leading-relaxed">
+                  <h2 className="text-xl sm:text-2xl font-bold text-slate-800 mb-2 sm:mb-3">Elimination Path</h2>
+                  <p className="text-slate-600 text-xs sm:text-base leading-relaxed">
                     Take one sentence and master it from Bronze all the way to Platinum before moving to the next sentence.
                   </p>
                 </button>
@@ -610,18 +715,18 @@
 
         if (finished) {
           return (
-            <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
-              <div className="bg-white p-12 rounded-3xl shadow-xl text-center max-w-md w-full">
-                <CheckCircleIcon className="w-24 h-24 text-green-500 mx-auto mb-6" />
-                <h1 className="text-4xl font-bold text-slate-800 mb-4">You did it!</h1>
-                <p className="text-lg text-slate-600 mb-8">You've completed all sentences and mastered every league.</p>
-                <div className="flex items-center justify-center space-x-3 bg-slate-100 p-4 rounded-2xl mb-8">
-                  <TrophyIcon className="w-8 h-8 text-yellow-500" />
-                  <span className="text-3xl font-bold text-slate-800">{score} pts</span>
+            <div className="min-h-[100dvh] bg-slate-50 flex items-center justify-center p-4">
+              <div className="bg-white p-8 sm:p-12 rounded-3xl shadow-xl text-center max-w-md w-full">
+                <CheckCircleIcon className="w-16 h-16 sm:w-24 sm:h-24 text-green-500 mx-auto mb-4 sm:mb-6" />
+                <h1 className="text-2xl sm:text-4xl font-bold text-slate-800 mb-3 sm:mb-4">You did it!</h1>
+                <p className="text-sm sm:text-lg text-slate-600 mb-6 sm:mb-8">You've completed all sentences and mastered every league.</p>
+                <div className="flex items-center justify-center space-x-3 bg-slate-100 p-3 sm:p-4 rounded-2xl mb-6 sm:mb-8">
+                  <TrophyIcon className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-500" />
+                  <span className="text-2xl sm:text-3xl font-bold text-slate-800">{score} pts</span>
                 </div>
                 <button 
                   onClick={() => setMode('menu')}
-                  className="px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold shadow-lg hover:bg-indigo-700 w-full"
+                  className="px-6 py-3.5 sm:px-8 sm:py-4 bg-indigo-600 text-white rounded-xl font-bold shadow-lg hover:bg-indigo-700 w-full"
                 >
                   Return to Menu
                 </button>
@@ -631,64 +736,54 @@
         }
 
         const currentLeagueInfo = LEAGUES[level - 1];
-        const popupTitle = mode === 'leaguewise' 
-          ? `${currentLeagueInfo.name} Complete!` 
-          : "Great Job!";
-        const popupSubtitle = mode === 'leaguewise'
-          ? "You've successfully translated all sentences in this league."
-          : "Get ready for the next challenge.";
-
-        const nextButtonText = mode === 'elimination'
-          ? (level < 4 ? `Proceed to ${LEAGUES[level].name}` : "Next Sentence")
-          : (themeIndex < THEMES.length - 1 ? "Next Sentence" : `Proceed to ${level < 4 ? LEAGUES[level].name : "Finish"}`);
 
         return (
-          <div className="min-h-screen bg-slate-50 flex flex-col items-center p-4 md:p-8 font-sans">
+          <div className="h-[100dvh] max-h-[100dvh] bg-slate-50 flex flex-col justify-between items-center p-2.5 sm:p-4 md:p-6 font-sans overflow-hidden select-none box-border">
             
             {/* Header */}
-            <div className="w-full max-w-3xl flex justify-between items-center mb-8">
-              <div className="bg-white px-4 py-2 rounded-full shadow-sm flex items-center space-x-2">
-                <span className="text-slate-500 font-medium text-sm uppercase tracking-wider">Remaining</span>
-                <span className="bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-bold">
-                  {THEMES.length - themeIndex}
+            <div className="w-full max-w-3xl flex justify-between items-center shrink-0 mb-1.5 sm:mb-3">
+              <div className="bg-white px-3 py-1 sm:px-4 sm:py-1.5 rounded-full shadow-sm flex items-center space-x-1.5 border border-slate-100">
+                <span className="text-slate-400 font-medium text-xs uppercase tracking-wider">Remaining</span>
+                <span className="bg-slate-100 text-slate-700 px-1.5 py-0.2 rounded-md font-bold text-xs sm:text-sm">
+                  {cardQueue.length - currentIndex}
                 </span>
               </div>
-              <div className="flex items-center space-x-2 bg-white px-5 py-2.5 rounded-full shadow-sm border border-slate-100">
-                <TrophyIcon className="w-5 h-5 text-yellow-500" />
-                <span className="font-bold text-slate-800 text-lg">{score} pts</span>
+              <div className="flex items-center space-x-1.5 bg-white px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full shadow-sm border border-slate-100">
+                <TrophyIcon className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-500" />
+                <span className="font-bold text-slate-800 text-sm sm:text-base">{score} pts</span>
               </div>
               <button 
                 onClick={() => setMode('menu')} 
-                className="text-sm font-bold text-slate-400 hover:text-slate-600 transition-colors"
+                className="text-xs sm:text-sm font-bold text-slate-400 hover:text-slate-600 transition-colors px-2 py-1"
               >
                 Exit Game
               </button>
             </div>
 
             {/* Main Flashcard Container */}
-            <div className="w-full max-w-3xl bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col min-h-[420px]">
+            <div className="w-full max-w-3xl bg-white rounded-2xl sm:rounded-3xl shadow-lg border border-slate-100 overflow-hidden flex flex-col flex-1 min-h-0 my-1 sm:my-2">
               {/* League Indicator Bar */}
-              <div className={`px-6 py-3 text-white font-bold text-center tracking-widest uppercase text-sm ${currentLeagueInfo.color} transition-colors duration-500`}>
+              <div className={`px-4 py-1.5 sm:py-2 text-white font-bold text-center tracking-widest uppercase text-xs sm:text-sm ${currentLeagueInfo.color} transition-colors duration-500 shrink-0`}>
                 {currentLeagueInfo.name}
               </div>
 
-              <div className="p-8 md:p-12 flex-grow flex flex-col justify-center relative">
+              <div className="p-3 sm:p-6 md:p-8 flex-1 min-h-0 flex flex-col justify-center overflow-y-auto relative">
                 
                 {/* Turkish Sentence */}
-                <div className="text-2xl md:text-3xl font-medium text-slate-800 leading-relaxed text-center">
+                <div className="text-xl sm:text-2xl md:text-3xl font-medium text-slate-800 leading-snug sm:leading-relaxed text-center">
                   {renderSentence(trHighlights[level - 1], true)}
                 </div>
                 
                 {isRevealed && (
-                  <div className="mt-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                    <div className="flex items-center justify-center space-x-4 mb-8">
+                  <div className="mt-3 sm:mt-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
+                    <div className="flex items-center justify-center space-x-3 mb-2 sm:mb-4">
                       <div className="h-px bg-slate-200 flex-grow"></div>
-                      <span className="text-slate-400 font-medium text-sm uppercase tracking-wider">English</span>
+                      <span className="text-slate-400 font-semibold text-[10px] sm:text-xs uppercase tracking-wider">English</span>
                       <div className="h-px bg-slate-200 flex-grow"></div>
                     </div>
                     
                     {/* English Sentence */}
-                    <div className="text-2xl md:text-3xl font-medium text-slate-600 leading-relaxed text-center">
+                    <div className="text-lg sm:text-2xl md:text-3xl font-medium text-slate-600 leading-snug sm:leading-relaxed text-center">
                       {renderSentence(enHighlights[level - 1], false)}
                     </div>
                   </div>
@@ -696,44 +791,37 @@
               </div>
             </div>
 
-            {/* Controls */}
-            <div className="w-full max-w-3xl mt-8 flex justify-center">
+            {/* Prompt Screen & Controls */}
+            <div className="w-full max-w-3xl shrink-0 mt-1 sm:mt-3 flex justify-center">
               {!isRevealed ? (
                 <button 
                   onClick={handleReveal} 
-                  className="px-8 py-5 bg-indigo-600 text-white rounded-2xl font-bold shadow-lg shadow-indigo-200 hover:bg-indigo-700 active:scale-95 transition-all text-xl w-full max-w-md"
+                  className="px-6 py-3.5 sm:py-4 bg-indigo-600 text-white rounded-xl sm:rounded-2xl font-bold shadow-md shadow-indigo-200 hover:bg-indigo-700 active:scale-95 transition-all text-lg sm:text-xl w-full max-w-md"
                 >
                   Tap to Reveal
                 </button>
               ) : (
-                <button 
-                  onClick={handleNext} 
-                  className="px-8 py-5 bg-green-500 text-white rounded-2xl font-bold shadow-lg shadow-green-200 hover:bg-green-600 active:scale-95 transition-all text-xl w-full max-w-md flex items-center justify-center space-x-2"
-                >
-                  <span>{nextButtonText}</span>
-                  <ChevronRightIcon className="w-6 h-6" />
-                </button>
+                <div className="w-full max-w-md bg-white p-3.5 sm:p-4 rounded-2xl sm:rounded-3xl shadow-lg border border-slate-100 flex flex-col items-center animate-in fade-in zoom-in-95 duration-150">
+                  <p className="text-slate-700 font-bold text-sm sm:text-base mb-2.5 sm:mb-3 text-center">Did you get it right?</p>
+                  <div className="grid grid-cols-2 gap-2.5 sm:gap-4 w-full">
+                    <button 
+                      onClick={() => handleAnswer(false)} 
+                      className="py-3 sm:py-3.5 px-3 sm:px-5 bg-slate-50 hover:bg-rose-50 hover:border-rose-300 text-slate-700 hover:text-rose-600 rounded-xl sm:rounded-2xl font-bold border border-slate-200 active:scale-95 transition-all flex items-center justify-center space-x-1.5 text-base sm:text-lg shadow-sm"
+                    >
+                      <XIcon className="w-5 h-5 text-rose-500 shrink-0" />
+                      <span>Wrong <span className="text-xs text-slate-400 font-normal">(0 pts)</span></span>
+                    </button>
+                    <button 
+                      onClick={() => handleAnswer(true)} 
+                      className="py-3 sm:py-3.5 px-3 sm:px-5 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl sm:rounded-2xl font-bold shadow-md shadow-emerald-200 active:scale-95 transition-all flex items-center justify-center space-x-1.5 text-base sm:text-lg"
+                    >
+                      <CheckIcon className="w-5 h-5 text-white shrink-0" />
+                      <span>Correct <span className="text-xs text-emerald-100 font-medium">(+10 pts)</span></span>
+                    </button>
+                  </div>
+                </div>
               )}
             </div>
-
-            {/* Level Up Popup */}
-            {showPopup && (
-              <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-                <div className="bg-white rounded-3xl p-10 max-w-sm w-full text-center shadow-2xl animate-in zoom-in-95 duration-200">
-                  <div className={`w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6 shadow-inner ${LEAGUES[level].color}`}>
-                    <TrophyIcon className="w-10 h-10 text-white" />
-                  </div>
-                  <h2 className="text-3xl font-bold text-slate-800 mb-2">{popupTitle}</h2>
-                  <p className="text-slate-500 mb-8 font-medium">{popupSubtitle}</p>
-                  <button 
-                    onClick={handleProceedLeague} 
-                    className={`w-full py-4 text-white rounded-xl font-bold transition-transform active:scale-95 shadow-md ${LEAGUES[level].color}`}
-                  >
-                    Start {LEAGUES[level].name}
-                  </button>
-                </div>
-              </div>
-            )}
 
           </div>
         );
