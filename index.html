@@ -39,7 +39,7 @@
       const DICTIONARY = {
         "hemşire": "nurse", "kan": "blood", "aldı": "took", "sonra": "then", "hasta": "patient", "ayrıldı": "left",
         "sakin": "calm", "bir": "a", "şekilde": "way", "doktor": "doctor", "tarafından": "by", "görevlendirilen": "assigned",
-        "yarışçı": "racer", "arabayı": "car", "çarptı": "crashed", "tabelayı": "sign", "göremediği": "couldn't see", "için": "because",
+        "yarışçı": "racer", "arabayı": "car", "çarptı": "crashed", "tabelayı": "sign", "göremediği": "couldn't see", "göremediğinden": "couldn't see", "dolayı": "because of", "için": "because",
         "kayarak": "by slipping", "şampiyon": "champion", "olmaya": "trying to be", "çalışan": "working/trying",
         "sonuçları": "results", "inceledi": "examined", "beklerken": "while waiting", "hastalığı": "illness", "bulmak": "to find",
         "laboratuvar": "laboratory", "gönderilen": "sent", "sekreter": "secretary", "e-postayı": "email", "gönderdi": "sent",
@@ -53,7 +53,7 @@
         "kasada": "in safe", "saklanan": "hidden", "tamirci": "mechanic", "motoru": "engine", "tamir": "repaired", "eve": "home",
         "dönebilsin": "could drive/return", "diye": "so that", "yağ": "oil", "sızıntısını": "leak", "gidermek": "to fix",
         "köşedeki": "at the corner", "garajda": "garage", "aşırı": "over", "ısınmadan": "heating", "hasar": "damage",
-        "gören": "damaged", "sürücü": "driver", "park": "park", "feribot": "ferry", "yaklaştığı": "approaching", "alt": "lower",
+        "gören": "damaged", "sürücü": "driver", "park": "park", "feribot": "ferry", "yaklaştığı": "approaching", "yaklaştığından": "approaching", "alt": "lower",
         "güverteye": "deck", "dikkatlice": "carefully", "adaya": "island", "seyahat": "travel", "eden": "traveling",
         "yüzlerce": "hundreds", "yolcu": "passenger", "taşıyan": "carrying", "teknik": "technical", "direktör": "manager",
         "taktikleri": "tactics", "değiştirdi": "changed", "rakip": "opposing", "takım": "team", "atınca": "when scored",
@@ -65,7 +65,7 @@
         "dil": "language", "okulunda": "school", "şef": "chef", "eti": "meat", "pişirdi": "cooked", "garson": "waiter",
         "siparişi": "order", "aldıktan": "after taking", "sıcak": "hot", "ızgarada": "grill", "tepsi": "tray",
         "fransa'da": "in France", "eğitim": "training", "alan": "trained", "pilot": "pilot", "uçağı": "plane",
-        "indirdi": "landed", "hava": "weather", "kötü": "bad", "olduğu": "because", "piste": "runway", "güvenli": "safely",
+        "indirdi": "landed", "hava": "weather", "kötü": "bad", "olduğu": "because", "olduğundan": "because", "piste": "runway", "güvenli": "safely",
         "ticari": "commercial", "jeti": "jet", "uçuran": "flying", "mimar": "architect", "planları": "plans", "çizdi": "drew",
         "işçiler": "workers", "başlayabilsin": "could start", "büyük": "great", "hassasiyetle": "precision",
         "şirket": "company", "işe": "work", "alınan": "hired", "şantiyede": "site", "bekleyen": "waiting",
@@ -88,9 +88,9 @@
           theme: "Racer",
           sentences: [
             { en: "The racer crashed the car.", tr: "Yarışçı arabayı çarptı." },
-            { en: "The racer crashed the car because he couldn't see the sign.", tr: "Tabelayı göremediği için arabayı çarptı." },
-            { en: "The racer crashed the car by slipping because he couldn't see the sign.", tr: "Tabelayı göremediği için kayarak arabayı çarptı." },
-            { en: "The racer trying to be champion crashed the car by slipping because he couldn't see the sign.", tr: "Şampiyon olmaya çalışan yarışçı, tabelayı göremediği için kayarak arabayı çarptı." }
+            { en: "The racer crashed the car because he couldn't see the sign.", tr: "Yarışçı, tabelayı göremediğinden dolayı arabayı çarptı." },
+            { en: "The racer crashed the car by slipping because he couldn't see the sign.", tr: "Yarışçı, tabelayı göremediğinden dolayı kayarak arabayı çarptı." },
+            { en: "The racer trying to be champion crashed the car by slipping because he couldn't see the sign.", tr: "Şampiyon olmaya çalışan yarışçı, tabelayı göremediğinden dolayı kayarak arabayı çarptı." }
           ]
         },
         {
@@ -151,9 +151,9 @@
           theme: "Traveler",
           sentences: [
             { en: "The driver parked the car.", tr: "Sürücü arabayı park etti." },
-            { en: "The driver parked the car because the ferry was approaching.", tr: "Feribot yaklaştığı için sürücü arabayı park etti." },
-            { en: "The driver parked the car carefully on the lower deck because the ferry was approaching.", tr: "Feribot yaklaştığı için sürücü arabayı alt güverteye dikkatlice park etti." },
-            { en: "The driver traveling to the island parked the car carefully on the lower deck because the ferry carrying hundreds of passengers was approaching.", tr: "Yüzlerce yolcu taşıyan feribot yaklaştığı için, adaya seyahat eden sürücü arabayı alt güverteye dikkatlice park etti." }
+            { en: "The driver parked the car because the ferry was approaching.", tr: "Sürücü, feribot yaklaştığından dolayı arabayı park etti." },
+            { en: "The driver parked the car carefully on the lower deck because the ferry was approaching.", tr: "Sürücü, feribot yaklaştığından dolayı arabayı alt güverteye dikkatlice park etti." },
+            { en: "The driver traveling to the island parked the car carefully on the lower deck because the ferry carrying hundreds of passengers was approaching.", tr: "Adaya seyahat eden sürücü, yüzlerce yolcu taşıyan feribot yaklaştığından dolayı arabayı alt güverteye dikkatlice park etti." }
           ]
         },
         {
@@ -196,9 +196,9 @@
           theme: "Aviation",
           sentences: [
             { en: "The pilot landed the plane.", tr: "Pilot uçağı indirdi." },
-            { en: "The pilot landed the plane because the weather was bad.", tr: "Hava kötü olduğu için pilot uçağı indirdi." },
-            { en: "The pilot landed the plane safely on the runway because the weather was bad.", tr: "Hava kötü olduğu için pilot uçağı piste güvenli bir şekilde indirdi." },
-            { en: "The pilot flying the commercial jet landed the plane safely on the runway because the weather was bad.", tr: "Hava kötü olduğu için, ticari jeti uçuran pilot uçağı piste güvenli bir şekilde indirdi." }
+            { en: "The pilot landed the plane because the weather was bad.", tr: "Pilot, hava kötü olduğundan dolayı uçağı indirdi." },
+            { en: "The pilot landed the plane safely on the runway because the weather was bad.", tr: "Pilot, hava kötü olduğundan dolayı uçağı piste güvenli bir şekilde indirdi." },
+            { en: "The pilot flying the commercial jet landed the plane safely on the runway because the weather was bad.", tr: "Ticari jeti uçuran pilot, hava kötü olduğundan dolayı uçağı piste güvenli bir şekilde indirdi." }
           ]
         },
         {
